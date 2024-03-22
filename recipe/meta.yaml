@@ -1,13 +1,13 @@
 {% set name = "sphinx-remove-toctrees" %}
-{% set version = "0.0.3" %}
+{% set version = "1.0.0.post1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sphinx-remove-toctrees-{{ version }}.tar.gz
-  sha256: e4792cc4e5d25ceb1a44dd1490c45d578e6b36f1b1e385ede659e4c324b98cba
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 4808d1edf151c06eff6d2c3922ec7ebc9fd3aa1762de1b2e1674a37f5ac9ce2d
 
 build:
   noarch: python
@@ -16,11 +16,12 @@ build:
 
 requirements:
   host:
+    - python >=3.9
+    - hatchling
     - pip
-    - python >=3.6
   run:
-    - python >=3.6
-    - sphinx >=1.8
+    - python >=3.9
+    - sphinx >=5
 
 test:
   imports:
