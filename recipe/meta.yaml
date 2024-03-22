@@ -16,11 +16,12 @@ build:
 
 requirements:
   host:
+    - python >=3.9
+    - hatchling
     - pip
-    - python >=3.6
   run:
-    - python >=3.6
-    - sphinx >=1.8
+    - python >=3.9
+    - sphinx >=5
 
 test:
   imports:
